@@ -1,224 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
-
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Orbitron", Arial, sans-serif;
+  font-family: "Courier New", monospace;
   color: #fff;
   background:
-    radial-gradient(circle at 50% 15%, rgba(0, 180, 170, .18), transparent 30%),
-    radial-gradient(circle at 50% 75%, rgba(255, 60, 0, .12), transparent 35%),
-    #030a0d;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: .22;
-  background:
-    linear-gradient(rgba(0,255,220,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,220,.05) 1px, transparent 1px);
-  background-size: 26px 26px;
+    radial-gradient(circle at 50% 35%, rgba(255, 0, 174, .18), transparent 30%),
+    radial-gradient(circle, #454545 1px, transparent 1.5px);
+  background-color: #050505;
+  background-size: auto, 9px 9px;
 }
 
 .page {
   width: min(100%, 720px);
-  margin: auto;
-  padding: 18px 18px 28px;
-  position: relative;
+  margin: 0 auto;
+  padding: 28px 28px 36px;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: clamp(48px, 13vw, 92px);
+  font-weight: 1000;
+  font-style: italic;
+  letter-spacing: -6px;
+  line-height: 1;
+  color: #ffed00;
+  -webkit-text-stroke: 2px #111;
+  text-shadow:
+    3px 3px 0 #ff159d,
+    6px 6px 0 #111;
+  transform: skew(-5deg);
+}
+
+.logo span {
+  color: #ff159d;
+}
+
+.header p {
+  margin: 55px 0 24px;
+  font-size: clamp(16px, 4.2vw, 25px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(255,255,255,.35);
 }
 
 .hero {
-  text-align: center;
-  padding: 8px 0 20px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: clamp(28px, 8vw, 48px);
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-shadow: 0 0 12px rgba(255, 70, 20, .8);
-  margin-bottom: 16px;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 2px solid #ff4b1f;
-  border-radius: 10px;
-  background: #091316;
-  box-shadow: 0 0 18px rgba(255, 60, 20, .55);
-  font-size: 24px;
-}
-
-.status {
-  width: fit-content;
-  margin: 0 auto 18px;
-  padding: 9px 24px;
-  border: 1px solid #ff8a00;
-  border-radius: 30px;
-  background: rgba(20, 70, 50, .55);
-  box-shadow: 0 0 14px rgba(255, 130, 0, .22);
-  font-size: 14px;
-  letter-spacing: 2px;
-}
-
-.dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: #ff8a00;
-  box-shadow: 0 0 10px #ff8a00;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(22px, 6vw, 38px);
-  line-height: 1.2;
-  letter-spacing: 1px;
-  text-shadow: 0 0 12px rgba(255,255,255,.4);
-}
-
-.subtitle {
-  margin: 12px auto 0;
-  max-width: 560px;
-  color: #b9c7c9;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 8px 0 28px;
-}
-
-.stat-card {
-  min-height: 88px;
-  padding: 15px 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid #9a4a0b;
-  border-radius: 17px;
-  background: linear-gradient(145deg, rgba(74, 30, 8, .9), rgba(35, 16, 8, .92));
-  box-shadow: inset 0 0 15px rgba(255, 80, 0, .08),
-              0 0 12px rgba(255, 70, 0, .12);
-}
-
-.stat-card strong {
-  font-size: clamp(16px, 4.5vw, 24px);
-  margin-bottom: 8px;
-}
-
-.stat-card span {
-  font-size: clamp(10px, 3vw, 15px);
-  letter-spacing: 1px;
-  color: #e8e8e8;
-}
-
-.banner-wrap {
-  padding: 4px;
-  border: 1px solid #00bfc7;
-  border-radius: 26px;
-  background: #061113;
-  box-shadow:
-    0 0 12px rgba(0, 210, 210, .35),
-    0 18px 35px rgba(255, 50, 0, .15);
-  overflow: hidden;
-}
-
-.banner {
-  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 21px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 25px rgba(255, 0, 204, .28);
+  background: linear-gradient(135deg, #ff77c8, #6e29a8);
+  aspect-ratio: 16 / 12;
 }
 
-.actions {
+.hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.buttons {
   display: grid;
-  gap: 18px;
-  margin-top: 30px;
+  gap: 28px;
+  margin-top: 28px;
 }
 
-.action {
-  min-height: 76px;
+.btn {
   display: flex;
+  min-height: 100px;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  border-radius: 18px;
-  color: #fff;
   text-decoration: none;
-  font-size: clamp(18px, 5vw, 28px);
-  font-weight: 600;
-  letter-spacing: 2px;
-  border: 2px solid #00d6df;
-  transition: transform .18s ease, filter .18s ease;
+  color: white;
+  font-size: clamp(25px, 7vw, 42px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  border: 2px solid #ff38c7;
+  background: linear-gradient(180deg, #ff2ac0, #c5008f);
+  box-shadow:
+    0 0 15px rgba(255, 0, 204, .75),
+    inset 0 0 20px rgba(255,255,255,.12);
+  transition: .2s ease;
 }
 
-.action:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.12);
+.btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow:
+    0 0 28px rgba(255, 0, 204, 1),
+    inset 0 0 20px rgba(255,255,255,.2);
 }
 
-.action.primary {
-  background: linear-gradient(100deg, #2377b2, #a94e5b);
-}
-
-.action.secondary {
-  background: linear-gradient(100deg, #8f210b, #481208);
-}
-
-.icon {
-  font-size: 25px;
+.btn:active {
+  transform: scale(.98);
 }
 
 footer {
-  padding-top: 26px;
   text-align: center;
-  color: #718084;
-  font: 12px Arial, sans-serif;
+  margin-top: 65px;
+  padding-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
 }
 
-@media (max-width: 420px) {
+footer a {
+  color: #ff16bd;
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
   .page {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding: 24px 28px 30px;
   }
 
-  .stats {
-    gap: 8px;
+  .header p {
+    margin-top: 48px;
+    line-height: 1.6;
   }
 
-  .stat-card {
-    min-height: 82px;
-    border-radius: 14px;
-  }
-
-  .action {
-    min-height: 70px;
+  .hero {
     border-radius: 15px;
+  }
+
+  .btn {
+    min-height: 92px;
   }
 }
