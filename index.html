@@ -3,31 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TANIA77 - Halaman akses resmi dan informasi terbaru.">
-  <meta name="robots" content="index, follow">
   <title>TANIA77 - Game Online Terpercaya</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+
+    body {
+      font-family: "Courier New", monospace;
+      color: #fff;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.18) 1.3px, transparent 1.5px) 0 0/8px 8px,
+        #050505;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: min(100%, 700px);
+      padding: 28px 28px 42px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: min(88%, 520px);
+      max-height: 190px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 22px;
+    }
+
+    .welcome {
+      font-size: clamp(17px, 3.8vw, 27px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 8px 0 24px;
+      text-shadow: 0 2px 3px #000;
+    }
+
+    .hero {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 0 25px rgba(255, 0, 190, .15);
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      width: 100%;
+      border: 0;
+      border-radius: 13px;
+      padding: 20px 12px;
+      margin: 0 0 25px;
+      background: linear-gradient(180deg, #ff25c8 0%, #cf079b 100%);
+      color: #fff;
+      font: 700 clamp(22px, 5vw, 31px)/1 "Courier New", monospace;
+      letter-spacing: 4px;
+      cursor: pointer;
+      box-shadow:
+        0 0 8px #ff21c8,
+        0 0 28px rgba(255, 0, 210, .65),
+        inset 0 0 18px rgba(255,255,255,.12);
+      transition: transform .12s ease, filter .12s ease;
+    }
+
+    .btn:active {
+      transform: scale(.98);
+      filter: brightness(.9);
+    }
+
+    .copyright {
+      margin-top: 42px;
+      font-size: clamp(15px, 3.5vw, 21px);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .copyright span {
+      color: #ff00b7;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 20px 28px 35px; }
+      .logo { margin-bottom: 12px; }
+      .welcome { margin-bottom: 22px; }
+      .hero { border-radius: 15px; }
+      .btn { padding: 20px 10px; margin-bottom: 22px; }
+      .copyright { margin-top: 38px; }
+    }
+  </style>
 </head>
 <body>
   <main class="page">
-    <header class="header">
-      <div class="logo" aria-label="TANIA77">TANIA<span>77</span></div>
-      <p>Selamat Datang Di Game Online Terpercaya</p>
-    </header>
+    <img class="logo" src="logo-tania77.png" alt="TANIA77">
 
-    <section class="hero">
-      <!-- Ganti hero.jpg dengan gambar/banner TANIA77 milik kamu -->
-      <img src="hero.jpg" alt="TANIA77" class="hero-image">
-    </section>
+    <div class="welcome">Selamat Datang Di Game Online Terpercaya</div>
 
-    <nav class="buttons" aria-label="Menu utama">
-      <a class="btn" href="https://contoh-login.com" rel="nofollow noopener">LOGIN</a>
-      <a class="btn" href="https://contoh-daftar.com" rel="nofollow noopener">DAFTAR</a>
-    </nav>
+    <img class="hero" src="hero.jpg" alt="TANIA77">
 
-    <footer>
-      <p>@ Copyright 2026 By <a href="#">TANIA77</a></p>
-    </footer>
+    <button class="btn" onclick="goToSite()">LOGIN</button>
+    <button class="btn" onclick="goToSite()">DAFTAR</button>
+
+    <div class="copyright">
+      @ Copyright 2026 By <span>TANIA77</span>
+    </div>
   </main>
+
+  <script>
+    const TARGET = "https://msha.ke/tania77.ta";
+
+    function goToSite() {
+      window.location.href = TARGET;
+    }
+  </script>
 </body>
 </html>
