@@ -2,66 +2,311 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TANIA77 - halaman resmi dan informasi terbaru.">
-  <meta name="robots" content="index, follow">
-  <title>TANIA77 - Halaman Resmi</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#071112">
+  <title>TANIA77</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: #050b0c;
+      color: #fff;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(0, 255, 255, .08), transparent 35%),
+        linear-gradient(180deg, #081617 0%, #050b0c 55%, #070909 100%);
+    }
+
+    /* Subtle futuristic grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, #000, transparent 85%);
+    }
+
+    .page {
+      width: min(100%, 720px);
+      margin: 0 auto;
+      padding: 18px 23px 45px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 55px;
+    }
+
+    .stat {
+      height: 158px;
+      border: 2px solid #a84c0a;
+      border-radius: 29px;
+      background: linear-gradient(145deg, rgba(50,25,7,.96), rgba(37,22,12,.88));
+      box-shadow:
+        inset 0 0 18px rgba(255,110,0,.07),
+        0 0 8px rgba(255,95,0,.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .stat strong {
+      font-family: "Arial Black", Arial, sans-serif;
+      font-size: clamp(24px, 5vw, 39px);
+      letter-spacing: 1px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .stat span {
+      font-size: clamp(14px, 3.2vw, 22px);
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+
+    .hero {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #00eaff;
+      border-radius: 40px;
+      background: #0a1618;
+      box-shadow:
+        0 0 12px rgba(0,234,255,.45),
+        inset 0 0 16px rgba(0,234,255,.16);
+      margin-bottom: 58px;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 31px;
+      border: 1px solid rgba(0, 234, 255, .25);
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .menu-button {
+      min-height: 135px;
+      width: 100%;
+      border: 3px solid #00eaff;
+      border-radius: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: clamp(22px, 5.4vw, 38px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      box-shadow: 0 0 7px rgba(0,234,255,.25);
+      transition: transform .15s ease, filter .15s ease;
+    }
+
+    .menu-button:active {
+      transform: scale(.985);
+      filter: brightness(1.15);
+    }
+
+    .home {
+      background: linear-gradient(105deg, #168dc8 0%, #657aa8 52%, #b75a79 100%);
+    }
+
+    .contact {
+      background: linear-gradient(105deg, #a7270d 0%, #9f1d0e 100%);
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    /* CSS icons, so no icon library is required */
+    .home-icon {
+      position: relative;
+      width: 34px;
+      height: 29px;
+      border: 4px solid #fff;
+      border-top: 0;
+      margin-top: 9px;
+    }
+
+    .home-icon::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-left: 4px solid #fff;
+      border-top: 4px solid #fff;
+      transform: rotate(45deg);
+      top: -12px;
+      left: 2px;
+      background: transparent;
+    }
+
+    .mail-icon {
+      width: 36px;
+      height: 26px;
+      border: 3px solid #fff;
+      position: relative;
+    }
+
+    .mail-icon::before,
+    .mail-icon::after {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      background: #fff;
+      top: 7px;
+    }
+
+    .mail-icon::before {
+      left: 0;
+      transform: rotate(32deg);
+      transform-origin: left center;
+    }
+
+    .mail-icon::after {
+      right: 0;
+      transform: rotate(-32deg);
+      transform-origin: right center;
+    }
+
+    @media (max-width: 500px) {
+      .page {
+        padding: 4px 23px 34px;
+      }
+
+      .stats {
+        gap: 15px;
+        margin-bottom: 55px;
+      }
+
+      .stat {
+        height: 158px;
+        border-radius: 28px;
+      }
+
+      .hero {
+        margin-bottom: 58px;
+        border-radius: 39px;
+      }
+
+      .menu-button {
+        min-height: 134px;
+        border-radius: 28px;
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .page {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .stats {
+        gap: 9px;
+      }
+
+      .stat {
+        height: 130px;
+      }
+
+      .stat strong {
+        font-size: 22px;
+      }
+
+      .stat span {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .menu-button {
+        min-height: 105px;
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="page">
+  <main class="page">
 
-    <header class="hero">
-      <div class="brand">
-        <span class="brand-mark">T</span>
-        <span>TANIA77</span>
+    <section class="stats" aria-label="Informasi">
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>ONLINE</span>
       </div>
-
-      <div class="status">
-        <span class="dot"></span>
-        TANIA77
+      <div class="stat">
+        <strong>100%</strong>
+        <span>INFORMASI</span>
       </div>
+      <div class="stat">
+        <strong>FAST</strong>
+        <span>ACCESS</span>
+      </div>
+    </section>
 
-      <h1>SELAMAT DATANG DI TANIA77</h1>
-      <p class="subtitle">Temukan informasi dan tautan penting di sini.</p>
-    </header>
+    <section class="hero">
+      <img src="tania77.jpg" alt="TANIA77">
+    </section>
 
-    <main>
-      <section class="stats" aria-label="Informasi">
-        <div class="stat-card">
-          <strong>24/7</strong>
-          <span>ONLINE</span>
-        </div>
-        <div class="stat-card">
-          <strong>100%</strong>
-          <span>INFORMASI</span>
-        </div>
-        <div class="stat-card">
-          <strong>FAST</strong>
-          <span>ACCESS</span>
-        </div>
-      </section>
+    <nav class="buttons" aria-label="Navigasi">
+      <a class="menu-button home"
+         href="https://msha.ke/tania77.ta"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="icon home-icon" aria-hidden="true"></span>
+        <span>HALAMAN UTAMA</span>
+      </a>
 
-      <section class="banner-wrap">
-        <img src="banner-tania77.png" alt="Banner TANIA77" class="banner">
-      </section>
+      <a class="menu-button contact"
+         href="https://msha.ke/tania77.ta"
+         target="_blank"
+         rel="noopener noreferrer">
+        <span class="icon mail-icon" aria-hidden="true"></span>
+        <span>HUBUNGI KAMI</span>
+      </a>
+    </nav>
 
-      <section class="actions" aria-label="Tautan">
-        <a class="action primary" href="#" aria-label="Buka halaman utama">
-          <span class="icon">⌂</span>
-          <span>HALAMAN UTAMA</span>
-        </a>
-
-        <a class="action secondary" href="#" aria-label="Hubungi kami">
-          <span class="icon">✉</span>
-          <span>HUBUNGI KAMI</span>
-        </a>
-      </section>
-    </main>
-
-    <footer>
-      © 2026 TANIA77 · Semua hak dilindungi.
-    </footer>
-  </div>
+  </main>
 </body>
 </html>
