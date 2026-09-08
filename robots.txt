@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tania77-link.github.io/Tania77/sitemap.xml
