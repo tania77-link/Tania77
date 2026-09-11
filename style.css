@@ -81,32 +81,47 @@ body {
 
 .btn {
     display: block;
-    width: 100%;
-    max-width: 520px;
-    margin: 14px auto;
-    padding: 16px 20px;
-    border: 1px solid rgba(255, 0, 190, 0.8);
-    border-radius: 14px;
-    background: linear-gradient(135deg, #ff008c, #ff0055);
-    color: #fff;
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    width: 92%;
+    max-width: 580px;
+    margin: 18px auto;
+    padding: 20px 20px;
+
+    background: linear-gradient(
+        180deg,
+        #ff25c8 0%,
+        #e900a8 100%
+    );
+
+    color: #ffffff;
+    border: 2px solid rgba(255, 80, 220, 0.8);
+    border-radius: 22px;
+
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 8px;
+
     text-align: center;
     cursor: pointer;
+
     box-shadow:
-        0 0 12px rgba(255, 0, 190, 0.7),
-        0 0 28px rgba(255, 0, 150, 0.35);
+        0 0 8px #ff00c8,
+        0 0 20px rgba(255, 0, 200, 0.85),
+        0 0 40px rgba(255, 0, 200, 0.55);
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 12px #ff00c8,
+        0 0 28px rgba(255, 0, 200, 0.95),
+        0 0 50px rgba(255, 0, 200, 0.65);
 }
 
 .btn:active {
     transform: scale(0.98);
-}
-
-.btn:hover {
-    box-shadow:
-        0 0 18px rgba(255, 0, 190, 0.9),
-        0 0 35px rgba(255, 0, 150, 0.5);
 }
 footer {
   text-align: center;
@@ -121,21 +136,13 @@ footer a {
   font-weight: 800;
 }
 
-@media (max-width: 480px) {
-  .page {
-    padding: 24px 28px 30px;
-  }
-
-  .header p {
-    margin-top: 48px;
-    line-height: 1.6;
-  }
-
-  .hero {
-    border-radius: 15px;
-  }
-
-  .btn {
-    min-height: 92px;
-  }
+@media (max-width: 600px) {
+    .btn {
+        width: 88%;
+        padding: 19px 15px;
+        font-size: 23px;
+        letter-spacing: 7px;
+        border-radius: 20px;
+        margin: 16px auto;
+    }
 }
